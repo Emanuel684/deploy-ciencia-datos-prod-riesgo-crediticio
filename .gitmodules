@@ -1,0 +1,3 @@
+[submodule "ci-p03-python-etl"]
+	path = ci-p03-python-etl
+	url = https://github.com/Emanuel684/ciencia-datos-prod-riesgo-crediticio.git
