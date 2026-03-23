@@ -1,0 +1,16 @@
+services: 
+  jenkins: 
+    image: jenkins/jenkins:lts-jdk17 
+    container_name: jenkins 
+    user: root 
+    ports: 
+      - "8080:8080" 
+      - "50000:50000" 
+    volumes: 
+      - jenkins_home:/var/jenkins_home 
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - D:\Proyectos\JuanSe\ci-617-pyops-developer:/var/jenkins_home/workspace 
+    environment: 
+      - DOCKER_HOST=unix:///var/run/docker.sock 
+volumes: 
+  jenkins_home: {} 
