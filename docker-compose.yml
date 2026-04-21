@@ -6,11 +6,11 @@ services:
     ports: 
       - "8090:8080" 
       - "50000:50000" 
-    volumes: 
-      - jenkins_home:/var/jenkins_home 
-      - /var/run/docker.sock:/var/run/docker.sock 
-      # - D:\Proyectos\JuanSe\ci-617-pyops-developer:/var/jenkins_home/workspace 
-      - C:\Users\emanu\OneDrive\Escritorio\Workspace\UPB\ciencia_datos_en_prod\deploy-ciencia-datos-prod-riesgo-crediticio:/var/jenkins_home/workspace
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Do not bind-mount the host repo onto /var/jenkins_home/workspace: Jenkins
+      # expects per-job workspaces under workspace/<job>/<build> after checkout scm.
     environment: 
       - DOCKER_HOST=unix:///var/run/docker.sock 
 volumes: 
